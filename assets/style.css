@@ -27,3 +27,11 @@ nav a{display:inline-flex;align-items:center;justify-content:center;min-width:44
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.site-header,.intro-actions,.paper-links,.back-link,.site-footer,.figure-placeholder,.skip-link{display:none}.page-shell{max-width:none;padding:0}.intro{padding:0}.content-section{padding:18px 0}body{font-size:11pt}h1{font-size:25pt}a{color:#000}.project{grid-template-columns:1fr}.project-visual{display:none}.project,.publication,.timeline li{break-inside:avoid}.contact-links{font-size:10pt}}
+/* Representative paper figures: preserve all panels and their original aspect ratios. */
+.project{grid-template-columns:minmax(260px,340px) minmax(0,1fr);align-items:start}
+.project-visual{height:auto;aspect-ratio:auto;background:#fff;overflow:visible;border:0}
+.project-visual .figure-link{display:block;background:#fff;border:1px solid var(--line);padding:8px;border-radius:4px}
+.project-visual img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.project-visual .figure-caption{margin:8px 0 0;font-size:.8rem;color:var(--muted);line-height:1.45}
+.figure-link:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:760px){.project{grid-template-columns:1fr;gap:18px}.project-visual{height:auto;max-width:100%}.projects{gap:36px}}
